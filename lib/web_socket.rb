@@ -323,7 +323,7 @@ class WebSocketServer
           begin
             ws = create_web_socket(s)
             yield(ws) if ws
-          rescue => ex
+          rescue Exception,SystemCallError => ex
             print_backtrace(ex)
           ensure
             begin
